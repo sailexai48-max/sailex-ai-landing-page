@@ -38,7 +38,7 @@ export const Problem = () => {
             {problems.map((problem, index) => (
               <div 
                 key={index}
-                className="bg-gradient-card p-8 rounded-2xl shadow-card card-hover"
+                className="bg-gradient-card p-8 rounded-2xl shadow-card card-hover stagger-item border border-destructive/10"
               >
                 <div className="w-16 h-16 bg-destructive/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
                   <problem.icon className="w-8 h-8 text-destructive" />

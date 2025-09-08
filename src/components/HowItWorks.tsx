@@ -23,7 +23,7 @@ export const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section id="how-it-works" className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -41,8 +41,8 @@ export const HowItWorks = () => {
             <div className="hidden md:block absolute top-24 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-brand-teal/30 via-brand-teal to-brand-teal/30"></div>
 
             {steps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="bg-gradient-card p-8 rounded-2xl shadow-card card-hover text-center relative z-10">
+              <div key={index} className="relative stagger-item">
+                <div className="bg-gradient-card p-8 rounded-2xl shadow-card card-hover text-center relative z-10 border border-brand-teal/10">
                   {/* Step Number */}
                   <div className="text-6xl font-bold text-brand-teal/20 mb-4">
                     {step.number}

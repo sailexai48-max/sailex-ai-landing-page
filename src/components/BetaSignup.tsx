@@ -102,7 +102,7 @@ export const BetaSignup = () => {
             {/* Benefits */}
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-4 p-6 bg-gradient-card rounded-xl shadow-card">
+                <div key={index} className="flex items-start gap-4 p-6 bg-gradient-card rounded-xl shadow-card stagger-item border border-brand-teal/10">
                   <div className="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <benefit.icon className="w-6 h-6 text-brand-teal" />
                   </div>
