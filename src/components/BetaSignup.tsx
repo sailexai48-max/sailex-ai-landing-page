@@ -45,7 +45,7 @@ export const BetaSignup = () => {
 
       toast({
         title: "🚀 Welcome to the Beta!",
-        description: "We'll send you early access within 48 hours. Get ready to transform your sales process!",
+        description: "We will send early access to you soon. Thank you!",
       });
 
       // Reset form
@@ -53,7 +53,7 @@ export const BetaSignup = () => {
     } catch (error) {
       toast({
         title: "Signup Successful!",
-        description: "Thanks for joining! We'll be in touch soon with your beta access.",
+        description: "We will send early access to you soon. Thank you!",
       });
       setFormData({ name: "", email: "", company: "" });
     } finally {
