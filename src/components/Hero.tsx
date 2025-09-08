@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Play } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import salesTeamBg from "@/assets/sales-team-bg.jpg";
 
 export const Hero = () => {
   const scrollToBeta = () => {
@@ -13,14 +13,14 @@ export const Hero = () => {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${salesTeamBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* Animated Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/20 via-transparent to-brand-dark/30"></div>
+      {/* Professional Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/30 via-transparent to-brand-teal/20"></div>
       
       {/* Floating Geometric Elements */}
       <div className="absolute top-20 left-10 w-32 h-32 border border-brand-teal/30 rounded-full floating-element"></div>
@@ -40,11 +40,13 @@ export const Hero = () => {
         <div className="max-w-5xl mx-auto">
           {/* Logo */}
           <div className="mb-8 fade-in">
-            <img 
-              src="/lovable-uploads/6ee3598b-d4f2-455a-919f-700cdcf893d2.png" 
-              alt="Sailex.ai" 
-              className="h-16 mx-auto mb-4 brightness-0 invert"
-            />
+            <div className="w-20 h-20 mx-auto mb-4 bg-white rounded-full p-3 shadow-lg">
+              <img 
+                src="/lovable-uploads/6ee3598b-d4f2-455a-919f-700cdcf893d2.png" 
+                alt="Sailex.ai" 
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
 
           {/* Beta Badge with Glow */}

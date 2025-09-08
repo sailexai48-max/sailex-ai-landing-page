@@ -38,11 +38,13 @@ export const Navbar = () => {
             className="flex items-center gap-3 cursor-pointer" 
             onClick={() => scrollToSection('hero')}
           >
-            <img 
-              src="/lovable-uploads/6ee3598b-d4f2-455a-919f-700cdcf893d2.png" 
-              alt="Sailex.ai" 
-              className="h-8"
-            />
+            <div className="w-10 h-10 bg-white rounded-full p-2 shadow-md">
+              <img 
+                src="/lovable-uploads/6ee3598b-d4f2-455a-919f-700cdcf893d2.png" 
+                alt="Sailex.ai" 
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
 
           {/* Desktop Navigation */}

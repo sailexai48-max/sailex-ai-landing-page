@@ -9,11 +9,13 @@ export const Footer = () => {
             {/* Logo and Tagline */}
             <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
-                <img 
-                  src="/lovable-uploads/6ee3598b-d4f2-455a-919f-700cdcf893d2.png" 
-                  alt="Sailex.ai" 
-                  className="h-8 brightness-0 invert"
-                />
+                <div className="w-10 h-10 bg-white rounded-full p-2">
+                  <img 
+                    src="/lovable-uploads/6ee3598b-d4f2-455a-919f-700cdcf893d2.png" 
+                    alt="Sailex.ai" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
                 AI-powered sales assistant helping B2B teams close more deals, faster.
