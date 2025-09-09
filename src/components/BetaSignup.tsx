@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Rocket, Users, Zap } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface FormData {
   name: string;
@@ -26,36 +27,43 @@ export const BetaSignup = () => {
     setIsSubmitting(true);
 
     try {
-      // Google Sheets Integration - Replace with your actual Google Apps Script URL
-      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
-      
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          timestamp: new Date().toISOString()
-        }),
-      });
+      // Save to Supabase database
+      const { data, error } = await supabase
+        .from('beta_signups')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+          }
+        ]);
 
-      toast({
-        title: "🚀 Welcome to the Beta!",
-        description: "We will send early access to you soon. Thank you!",
-      });
-
-      // Reset form
-      setFormData({ name: "", email: "", company: "" });
+      if (error) {
+        // Handle duplicate email error specifically
+        if (error.code === '23505') {
+          toast({
+            title: "Already Registered!",
+            description: "This email is already on our beta waitlist. We'll be in touch soon!",
+            variant: "destructive",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "🚀 Welcome to the Beta!",
+          description: "We will send early access to you soon. Thank you!",
+        });
+        // Reset form only on successful submission
+        setFormData({ name: "", email: "", company: "" });
+      }
     } catch (error) {
+      console.error('Beta signup error:', error);
       toast({
-        title: "Signup Successful!",
-        description: "We will send early access to you soon. Thank you!",
+        title: "Something went wrong",
+        description: "Please try again later or contact support.",
+        variant: "destructive",
       });
-      setFormData({ name: "", email: "", company: "" });
     } finally {
       setIsSubmitting(false);
     }
