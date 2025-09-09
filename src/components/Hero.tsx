@@ -49,11 +49,11 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Beta Badge with Glow */}
-          <div className="inline-flex items-center gap-2 glass-effect text-white px-6 py-3 rounded-full text-sm font-medium mb-8 fade-in animate-pulse-glow">
-            <Sparkles className="w-4 h-4" />
-            Now in Private Beta
-          </div>
+      {/* Beta Badge with Glow */}
+      <div className="inline-flex items-center gap-2 glass-effect-enhanced text-white px-6 py-3 rounded-full text-sm font-medium mb-8 fade-in animate-pulse-glow modern-hover">
+        <Sparkles className="w-4 h-4" />
+        Now in Private Beta
+      </div>
 
           {/* Main Headlines with Staggered Animation */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 fade-in-delay leading-tight">
@@ -70,15 +70,15 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 fade-in-delay-3">
-            <Button 
-              variant="hero" 
-              size="lg" 
-              className="text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-brand-teal/50"
-              onClick={scrollToBeta}
-            >
-              Join the Beta
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-brand-teal/50 modern-hover"
+            onClick={scrollToBeta}
+          >
+            Join the Beta
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
           </div>
 
           {/* Social Proof Stats */}
